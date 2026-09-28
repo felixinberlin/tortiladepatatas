@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Mapa de la Tortilla</title>
+  <meta name="description" content="Todas las tortillas de patatas premiadas de España en un mapa. Every award-winning Spanish potato omelette on one map.">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1 data-i18n="title">El Mapa de la Tortilla</h1>
+      <p class="tagline" data-i18n="tagline">Todas las tortillas de patatas premiadas de España, en un mapa.</p>
+    </div>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <p class="notice" data-i18n="notice">Beta: datos sacados de noticias y aún sin verificar. La ubicación de cada chincheta es aproximada.</p>
+
+  <section class="filters" aria-label="Filtros">
+    <label><span data-i18n="search">Buscar</span>
+      <input type="search" id="f-q" autocomplete="off">
+    </label>
+    <label><span data-i18n="region">Región</span>
+      <select id="f-region"></select>
+    </label>
+    <label><span data-i18n="year">Año</span>
+      <select id="f-year"></select>
+    </label>
+    <label><span data-i18n="championship">Campeonato</span>
+      <select id="f-champ"></select>
+    </label>
+    <label><span data-i18n="style">Estilo</span>
+      <select id="f-style"></select>
+    </label>
+    <label class="check"><input type="checkbox" id="f-winners"> <span data-i18n="onlyWinners">Solo primeros puestos</span></label>
+    <button type="button" id="near-me" data-i18n="nearMe">Cerca de mí</button>
+  </section>
+
+  <main class="layout">
+    <div id="map" class="map" role="region" aria-label="Mapa"></div>
+    <section class="results">
+      <p id="count" class="count" aria-live="polite"></p>
+      <ol id="list" class="list"></ol>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n-html="footer">Mapa © colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+  </footer>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
